@@ -1,0 +1,52 @@
+#include<stdio.h>
+char
+ my_strncat(char str1[20], char str2[10], int n)
+
+{
+	char *ret = str1;
+
+	char *pre = str2;
+	ret = (ret + strlen(str1)-1);
+
+	while (n > 0&&*pre!='\0')
+
+	{
+
+		*(ret + 2) = *(ret + 1);
+
+		*(ret + 1) = *pre;
+
+		ret++;
+
+		pre++;
+
+		n--;
+
+
+	}
+
+	return str1[20];
+
+}
+
+int main()
+
+{
+
+	char str1[20] = "abcdefg";
+
+	char str2[10] = "12345";
+
+	int n = 0;
+
+	printf("请输入要粘贴的位数：");
+
+	scanf("%d",&n);
+
+	str1[20] = my_strncat(str1,str2,n);
+
+	printf("%s",str1);
+
+	return 0;
+
+}
