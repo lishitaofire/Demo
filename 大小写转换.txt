@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+	char x='0';
+	printf("ÇëÊäÈëÒ»¸ö×Ö·û£º\n");
+flag:
+	
+	x=getchar();
+	if(65<=x&&x<=90)
+	{
+		x=x+32;
+		printf("%c\n",x);
+	}
+	else 
+	{
+		if(97<=x&&x<=122)
+		{
+			x=x-32;
+			printf("%c\n",x);
+		}
+	}
+
+		goto flag;
+	return 0;
+}
