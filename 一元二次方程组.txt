@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<math.h>
+#define EXP 0.0000001
+int main()
+{
+	double a=0.0,b=0.0,c=0.0;
+	scanf("%lf%lf%lf",&a,&b,&c);
+	if((a> -EXP)&&(a< EXP))
+	{
+		printf("这个方程不是二次方程\n");
+	}
+	else
+	{
+		double d=b*b-4*a*c;
+		if((d<=EXP)&&(d>=-EXP))
+		{
+			printf("有两个相同的解：%lf \n",-b/(2*a));
+		}
+		else
+		{
+			if(d>0.0)
+			{
+				printf("有两个不相同的解：%lf %lf\n",(-b+sqrt(d))/(2*a),(-b-sqrt(d))/(2*a));
+			}
+			else
+			{
+				printf("有两个共轭复数解\n");
+			}
+		}
+	}
+	return 0;
+}
