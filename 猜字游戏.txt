@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+void meun()
+{
+	printf("******   命令目录   ******\n");
+	printf("********  1.play  ********\n");
+	printf("********  0.exit  ********\n");
+	
+}
+void play_game()
+{	
+	int c=0;
+	int ran;
+	srand((unsigned)time(NULL));
+	ran=rand()%101;
+	while(1)
+	{
+		printf("你猜>:");
+		scanf("%d",&c);
+		if(c<ran)
+		{
+			printf("小了\n");
+		}
+		else if(c>ran)
+		{
+			printf("大了\n");
+		}
+			else
+			{
+				printf("恭喜你猜对了\n");
+				break;
+			}
+
+	}
+}
+int main()
+{
+	int input=0;
+	while(1)
+	{
+		meun();
+		printf("请选择>:");
+	  scanf("%d",&input);
+	if(input==0)
+	{	
+		exit(1);
+	}
+	else
+		play_game();
+	}
+	return 0;
+}
