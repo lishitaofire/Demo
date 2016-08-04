@@ -1,0 +1,21 @@
+int main()
+{
+	int sum=0;
+	int n=0;
+	int m=0;
+	for(n=100;n<1000;n++)
+	{
+		m=n;
+	while(m>0)
+		{
+		sum=sum+(m%10)*(m%10)*(m%10);
+		m=m/10;
+		}
+	if(sum==n)
+		{
+		printf("%d\n",sum);
+		}
+	sum=0;
+	}
+	return 0;
+}
