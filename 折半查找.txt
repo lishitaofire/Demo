@@ -1,0 +1,39 @@
+#include<stdio.h>
+int scound(int arr[],int input,int left,int right)
+{
+	int num =0;
+	while(left<=right)
+	{
+		int mid=0;
+		mid=(left+right)/2;
+		if(input>arr[mid])
+		{
+			left=mid+1;
+		}
+		else if(input<arr[mid])
+		{
+			right=mid-1;
+		}
+		else
+		{
+			num=mid;
+			break;
+		}
+	}
+	if(left>right)
+	{
+		num=-1;
+	}
+	return num;
+}
+int main()
+{
+	int arr[]={1,2,3,4,5,6,7,8,9};
+	int left = 0;
+	int right =(sizeof(arr)/sizeof(arr[0])-1);
+	int input= 0;
+	printf("请输入要查询的数字：\n");
+	scanf("%d",&input);
+	printf("%d",scound(arr,input,left,right));
+	return 0;
+}
