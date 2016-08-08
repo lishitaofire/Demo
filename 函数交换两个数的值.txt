@@ -1,0 +1,18 @@
+2.使用函数实现两个数的交换。
+#include<stdio.h>
+void exch(int num1,int num2)
+{
+	num1=num1^num2;
+	num2=num1^num2;
+	num1=num1^num2;
+	printf("交换结束num1=%d num2=%d\n",num1,num2);
+}
+int main()
+{
+	int num1=0;
+	int num2=0;
+	printf("请输入num1和num2:\n");
+	scanf("%d%d",&num1,&num2);
+	exch(num1,num2);
+	return 0;
+}
