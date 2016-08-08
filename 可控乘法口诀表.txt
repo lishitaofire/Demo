@@ -1,0 +1,24 @@
+1.实现一个函数，打印乘法口诀表，口诀表的行数和列数自己指定，
+输入9，输出9*9口诀表，输出12，输出12*12的乘法口诀表
+#include<stdio.h>
+void mult(int n)
+{
+	int i=0;
+	int j=0;
+	for(i=1;i<n+1;i++)
+	{
+		for(j=1;j<i+1;j++)
+		{
+			printf("%d*%2d=%2d ",j,i,i*j);
+		}
+		printf("\n");
+	}
+}
+int main()
+{
+	int n=0;
+	printf("请输入要打印n*n乘法口诀表的n:\n");
+	scanf("%d",&n);
+	mult(n);
+	return 0;
+}
